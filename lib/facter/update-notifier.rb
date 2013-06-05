@@ -7,6 +7,8 @@ Facter.add('reboot_required') do
     result = Facter::Util::Resolution.exec('/usr/lib/update-notifier/update-motd-reboot-required')
     if result
       result.gsub(/\s+/, ' ').strip
+    else
+      'no'
     end
   end
 end
@@ -16,8 +18,9 @@ Facter.add('fsck_at_reboot') do
     result = Facter::Util::Resolution.exec('/usr/lib/update-notifier/update-motd-fsck-at-reboot')
     if result
       result.gsub(/\s+/, ' ').strip
+    else
+      'no'
     end
-
   end
 end
 
@@ -26,6 +29,8 @@ Facter.add('updates_available') do
     result = Facter::Util::Resolution.exec('/usr/lib/update-notifier/update-motd-updates-available')
     if result
       result.gsub(/\s+/, ' ').strip
+    else
+      'no'
     end
   end
 end
