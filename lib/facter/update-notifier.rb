@@ -27,8 +27,9 @@ end
 Facter.add('updates_available') do
   setcode do
     result = Facter::Util::Resolution.exec('/usr/lib/update-notifier/update-motd-updates-available')
-    if result
-      result.gsub(/\s+/, ' ').strip
+    result = result.gsub(/\s+/, ' ').strip
+    if not result.match('0 packages can be updated. 0 updates are security updates.')
+      result
     else
       'no'
     end
