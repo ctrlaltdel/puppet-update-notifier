@@ -1,4 +1,4 @@
-puppet-update-notifier
+puppet-update_notifier
 ======================
 
-Puppet update-notifier module
+Puppet update_notifier module

@@ -1,4 +1,4 @@
-name    'update-notifier'
+name    'update_notifier'
 version '0.1.0'
 source 'UNKNOWN'
 author 'update'

@@ -1,4 +1,4 @@
-# == Class: update-notifier
+# == Class: update_notifier
 #
 # Full description of class notifier here.
 #
@@ -23,19 +23,26 @@
 #
 # === Examples
 #
-#  class { notifier:
-#    servers => [ 'pool.ntp.org', 'ntp.local.company.com' ]
+#  include update_notifier
+#
+#  class { update_notifier:
+#    ensure => latest,
 #  }
 #
 # === Authors
 #
-# Author Name <author@domain.com>
+# Francois Deppierraz <francois.deppierraz@nimag.net>
 #
 # === Copyright
 #
-# Copyright 2013 Your name here, unless otherwise noted.
+# Copyright 2013 Francois Deppierraz, unless otherwise noted.
 #
-class update-notifier {
-
-
+class update_notifier (
+  $package = $update_notifier::params::package,
+  $ensure  = $update_notifier::params::ensure,
+  $ensure  = 'present',
+) inherits update_notifier::params {
+  package { $package:
+    ensure => $ensure,
+  }
 }
