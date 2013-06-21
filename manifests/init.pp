@@ -40,7 +40,6 @@
 class update_notifier (
   $package = $update_notifier::params::package,
   $ensure  = $update_notifier::params::ensure,
-  $ensure  = 'present',
 ) inherits update_notifier::params {
   package { $package:
     ensure => $ensure,
