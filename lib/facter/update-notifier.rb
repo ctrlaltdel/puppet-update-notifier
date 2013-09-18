@@ -27,7 +27,7 @@ end
 Facter.add('updates_available') do
   setcode do
     result = Facter::Util::Resolution.exec('/usr/lib/update-notifier/update-motd-updates-available')
-    if /^0 packages can be updated/.match(result):
+    if /^0 packages can be updated/.match(result)
       'no'
     else
       'yes'
@@ -38,7 +38,7 @@ end
 Facter.add('security_updates_available') do
   setcode do
     result = Facter::Util::Resolution.exec('/usr/lib/update-notifier/update-motd-updates-available')
-    if /^0 updates are security updates/.match(result):
+    if /^0 updates are security updates/.match(result)
       'no'
     else
       'yes'
